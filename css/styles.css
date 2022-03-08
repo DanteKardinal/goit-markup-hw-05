@@ -1,5 +1,8 @@
 :root {
   --logo-text-font: 'Raleway', sans-serif;
+  --primary-letter-spacing: 0.03em;
+  --primary-font: 'Roboto', sans-serif;
+  --portfolio-bgc-hover: rgba(33, 150, 243, 0.9);
   --nohover-navlink-color: #212121;
   --hover-cont-link: #2196f3;
   --primary-text-color: #757575;
@@ -9,9 +12,8 @@
   --comm-fill: #757575;
   --social-link-fill: #ffffff;
   --title-text-color: #212121;
-  --primary-font: 'Roboto', sans-serif;
+  --text-color-white: #ffffff;
   --card-set-gap: 30px;
-  --primary-letter-spacing: 0.03em;
 }
 
 body {
@@ -501,6 +503,9 @@ img {
   margin-top: calc(-1 * var(--card-set-gap));
   margin-left: calc(-1 * var(--card-set-gap));
 }
+.ourpjc-list {
+  position: relative;
+}
 .ourpjc-link {
   margin-top: var(--card-set-gap);
   margin-left: var(--card-set-gap);
@@ -514,6 +519,26 @@ img {
 .ourpjc-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+/* .ourprj-thumb {
+
+} */
+.ourpjc-text-hover {
+  display: block;
+  margin-top: 30px;
+  margin-left: 30px;
+  padding-top: 63px;
+  padding-right: 24px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+
+  position: absolute;
+
+  background-color: var(--portfolio-bgc-hover);
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: var(--primary-letter-spacing);
+  color: var(--text-color-white);
 }
 .ourprj-title {
   font-weight: bold;

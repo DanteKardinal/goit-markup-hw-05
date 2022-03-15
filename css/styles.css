@@ -13,6 +13,8 @@
   --social-link-fill: #ffffff;
   --title-text-color: #212121;
   --text-color-white: #ffffff;
+  --backdrop-bgc: rgba(0, 0, 0, 0.2);
+  --white-bgc: #ffffff;
   --card-set-gap: 30px;
 }
 
@@ -21,7 +23,7 @@ body {
   font-family: var(--primary-font);
   font-size: 14px;
   line-height: 1.14;
-  color: var(--primary-text-color);
+  color: var(--white-bgc);
 }
 a {
   text-decoration: none;
@@ -88,10 +90,15 @@ img {
 .nav-link.nav-current {
   color: var(--hover-cont-link);
 }
-.nav-current::after {
+.nav-link.nav-current::after {
   content: '';
-  background: var(--hover-cont-link);
+  display: inline-block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--hover-cont-link);
   border-radius: 2px;
+
+  margin-top: 28px;
 }
 
 /* Стили шапки */
@@ -139,10 +146,12 @@ img {
 .nav-list {
   display: flex;
 }
+.nav-item + .nav-item {
+  margin-left: 50px;
+}
 .nav-link {
   display: block;
   padding-top: 32px;
-  padding-bottom: 32px;
 
   font-weight: 500;
   font-size: 14px;
@@ -152,10 +161,18 @@ img {
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: #2196f3;
+  color: var(--hover-cont-link);
 }
-.nav-item + .nav-item {
-  margin-left: 50px;
+.nav-link:hover::after,
+.nav-link:focus::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--hover-cont-link);
+  border-radius: 2px;
+
+  margin-top: 28px;
 }
 
 /* Каналы связи со студией */
@@ -467,6 +484,49 @@ img {
   background-color: var(--hover-cont-link);
 }
 
+/* Модальное окно "Заказать услуги"*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--backdrop-bgc);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal-order {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: var(--white-bgc);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.btn-close-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 6px;
+  min-width: 30px;
+
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--white-bgc);
+}
+.modal-icon {
+  fill: #000000;
+}
 /* ПОРТФОЛИО */
 /* Основной контент страници */
 /* Фильтр по нашим проектам */
